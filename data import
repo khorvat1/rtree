@@ -1,0 +1,16 @@
+CREATE SCHEMA import
+  AUTHORIZATION kreso;
+
+
+ogr2ogr -f "PostgreSQL" PG:"host=localhost user=kreso dbname=kmpp password=choowiey" -lco "SCHEMA=import" TM_WORLD_BORDERS-0.3.shp -nln boundaries -nlt MULTIPOLYGON
+
+
+
+ogr2ogr -f "PostgreSQL" PG:"host=localhost user=kreso dbname=kmpp password=choowiey" -lco "SCHEMA=import" USA_adm2.shp -nln usa_adm_units -nlt MULTIPOLYGON
+
+
+--micanje context poruka 
+\set VERBOSITY terse
+
+
+
